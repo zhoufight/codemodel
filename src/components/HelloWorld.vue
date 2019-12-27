@@ -80,7 +80,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import 'pxTorem';
 h3 {
   margin: pxTorem(40) 0 0;
 }
@@ -89,7 +88,7 @@ ul {
   padding: 0;
   li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 pxTorem(10);
   }
 }
 

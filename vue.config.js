@@ -1,10 +1,22 @@
 const webpack = require('webpack');
-// const isProduction = process.env.NODE_ENV === 'production';
+const path = require('path');
 
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-console.log(`BUILD_ENV: ${process.env.BUILD_ENV}`);
+// 全局注入rem.scss
+function addStyleResource(rule) {
+  rule
+    .use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [path.resolve(__dirname, './src/assets/css/rem.scss')],
+    });
+}
+
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
+  chainWebpack: config => {
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
+    types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)));
+  },
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境修改配置...
@@ -14,7 +26,7 @@ module.exports = {
     return {
       resolve: {
         alias: {
-          pxTorem: '@/assets/css/rem.scss',
+          // pxTorem: '@/assets/css/rem.scss',
         },
       },
       plugins: [
@@ -38,6 +50,7 @@ module.exports = {
       },
     };
   },
+
   devServer: {
     proxy: {
       '/api': {
