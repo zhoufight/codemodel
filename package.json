@@ -13,10 +13,13 @@
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
-    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./"
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./",
+    "mock-server": "node ./src/mock/server.js --watch",
+    "mock-dev": "concurrently \"npm run serve\" \"npm run mock-server\""
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "concurrently": "^5.2.0",
     "core-js": "^3.3.2",
     "fastclick": "^1.0.6",
     "register-service-worker": "^1.6.2",
@@ -40,7 +43,9 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.0.0",
     "husky": "^3.0.0",
+    "json-server": "^0.16.1",
     "lint-staged": "^9.0.0",
+    "mockjs": "^1.1.0",
     "prettier": "^1.18.2",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",

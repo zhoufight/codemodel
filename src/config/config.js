@@ -1,6 +1,6 @@
 export default {
   prod: {
-    serverUrl: '10.10.67.94:9090',
+    serverUrl: 'http://localhost:8080/#/',
   },
   dev: {
     serverUrl: 'http://10.10.67.94:9000',
