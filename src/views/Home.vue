@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <button @click="test">请求数据</button>
+    <div class="test">你好了</div>
   </div>
 </template>
 
@@ -21,3 +22,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.test {
+  font-size: pxTorem(14);
+}
+</style>

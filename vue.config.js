@@ -26,7 +26,7 @@ module.exports = {
     return {
       resolve: {
         alias: {
-          // pxTorem: '@/assets/css/rem.scss',
+          pxTorem: '@/assets/css/rem.scss',
         },
       },
       plugins: [
