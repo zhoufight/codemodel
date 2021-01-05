@@ -18,7 +18,7 @@
     "mock-dev": "concurrently \"npm run serve\" \"npm run mock-server\""
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "concurrently": "^5.2.0",
     "core-js": "^3.3.2",
     "fastclick": "^1.0.6",
